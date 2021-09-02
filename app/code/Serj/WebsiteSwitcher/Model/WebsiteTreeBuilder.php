@@ -2,21 +2,26 @@
 
 namespace Serj\WebsiteSwitcher\Model;
 
-use Magento\Framework\UrlInterface;
 use Magento\Store\Model\StoreManagerInterface;
 
 class WebsiteTreeBuilder
 {
-    private $storeManager;
+    /**
+     * @var StoreManagerInterface
+     */
+    private StoreManagerInterface $storeManager;
 
-    private $urlBuilder;
-
-    public function __construct(StoreManagerInterface $storeManager, UrlInterface $urlBuilder)
+    /**
+     * @param StoreManagerInterface $storeManager
+     */
+    public function __construct(StoreManagerInterface $storeManager)
     {
         $this->storeManager = $storeManager;
-        $this->urlBuilder = $urlBuilder;
     }
 
+    /**
+     * @return array
+     */
     public function build(): array
     {
         $websites = $this->storeManager->getWebsites();
