@@ -468,15 +468,15 @@ return [
             'apple_store' => [
                 'website_id' => '1',
                 'code' => 'apple',
-                'name' => 'Apple Store',
+                'name' => 'Apple',
                 'sort_order' => '0',
                 'default_group_id' => '1',
                 'is_default' => '1'
             ],
-            'nike_shop' => [
+            'asics' => [
                 'website_id' => '2',
-                'code' => 'nike',
-                'name' => 'Nike Shop',
+                'code' => 'asics',
+                'name' => 'Asics',
                 'sort_order' => '1',
                 'default_group_id' => '2',
                 'is_default' => '0'
@@ -494,7 +494,7 @@ return [
             [
                 'group_id' => '1',
                 'website_id' => '1',
-                'name' => 'Apple Store Group',
+                'name' => 'Apple Store',
                 'root_category_id' => '2',
                 'default_store_id' => '1',
                 'code' => 'apple_store'
@@ -502,10 +502,10 @@ return [
             [
                 'group_id' => '2',
                 'website_id' => '2',
-                'name' => 'Nike Shop Group',
+                'name' => 'Asics Store',
                 'root_category_id' => '3',
                 'default_store_id' => '2',
-                'code' => 'nike_shop_group'
+                'code' => 'asics_store'
             ]
         ],
         'stores' => [
@@ -527,12 +527,12 @@ return [
                 'sort_order' => '0',
                 'is_active' => '1'
             ],
-            'nike_shop' => [
+            'asics_store' => [
                 'store_id' => '2',
-                'code' => 'nike_shop',
+                'code' => 'onitsuka_tiger',
                 'website_id' => '2',
                 'group_id' => '2',
-                'name' => 'Nike Shop',
+                'name' => 'Onitsuka Tiger',
                 'sort_order' => '0',
                 'is_active' => '1'
             ]

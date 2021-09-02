@@ -1,17 +1,7 @@
-<?php
-
-/** @var Switcher $viewModel */
-
-use Serj\WebsiteSwitcher\ViewModel\Switcher;
-
-$viewModel = $this->getViewModel();
-$websiteTree = $viewModel->getStores();
-
-?>
-<button type="button" class="action" data-trigger="website-switcher">
+<a style="color: #FFF; cursor: pointer" data-trigger="website-switcher">
     <span data-bind="i18n: 'Switch Store'"></span>
-</button>
-<div data-bind="mageInit: {
+</a>
+<div style="display: none" data-bind="mageInit: {
         'Magento_Ui/js/modal/modal':{
             'type': 'popup',
             'title': 'Select Store',
@@ -20,6 +10,6 @@ $websiteTree = $viewModel->getStores();
             'buttons': []
         }}">
     <div class="content">
-        <?=$this->getChildHtml('website_list_child')?>
+        <?=$this->getChildHtml('website-list-modal')?>
     </div>
 </div>
