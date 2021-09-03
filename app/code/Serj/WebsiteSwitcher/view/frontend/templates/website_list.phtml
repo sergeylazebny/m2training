@@ -1,14 +1,12 @@
 <?php
 
-use Serj\WebsiteSwitcher\ViewModel\Switcher;
+use Serj\WebsiteSwitcher\ViewModel\WebsiteList;
 
-/** @var Switcher $viewModel */
+/** @var WebsiteList $viewModel */
 $viewModel = $this->getViewModel();
-
-$websiteTree = $viewModel->getStores();
 ?>
 <div class="website-switcher-container">
-    <?php foreach ($websiteTree as $websiteName => $stores): ?>
+    <?php foreach ($viewModel->getStores() as $websiteName => $stores): ?>
         <ul>
             <b><?=$websiteName?></b>
             <?php foreach ($stores as $store): ?>

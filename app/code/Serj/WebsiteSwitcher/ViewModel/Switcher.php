@@ -2,31 +2,15 @@
 
 namespace Serj\WebsiteSwitcher\ViewModel;
 
-use Magento\Framework\UrlInterface;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
-use Magento\Store\Api\WebsiteRepositoryInterface;
-use Magento\Store\Model\StoreManagerInterface;
-use Serj\WebsiteSwitcher\Model\WebsiteTreeBuilder;
 
 class Switcher implements ArgumentInterface
 {
-    private $websiteTreeBuilder;
+    private ScopeConfigInterface $scopeConfig;
 
-    public function __construct(
-        WebsiteTreeBuilder $websiteTreeBuilder
-    ) {
-        $this->websiteTreeBuilder = $websiteTreeBuilder;
-    }
-
-    public function getStores(): array
+    public function __construct(ScopeConfigInterface $scopeConfig)
     {
-        return $this->websiteTreeBuilder->build();
-    }
-
-    public function sortWebsites(array $websites): void
-    {
-        usort($websites, function ($a, $b) {
-            return $a->getWebsiteId() > $b->getWebsiteId() ? 1: -1;
-        });
+        $this->scopeConfig = $scopeConfig;
     }
 }
