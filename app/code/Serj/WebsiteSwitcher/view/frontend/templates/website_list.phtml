@@ -1,0 +1,19 @@
+<?php
+
+use Serj\WebsiteSwitcher\ViewModel\WebsiteList;
+
+/** @var WebsiteList $viewModel */
+$viewModel = $this->getViewModel();
+?>
+<div class="website-switcher-container">
+    <?php foreach ($viewModel->getStores() as $websiteName => $stores): ?>
+        <ul>
+            <b><?=$websiteName?></b>
+            <?php foreach ($stores as $store): ?>
+                <li><a href="<?=$store['link']?>"><?=$store['name']?></a></li>
+            <?php endforeach; ?>
+        </ul>
+        <br>
+    <?php endforeach; ?>
+</div>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="website_flags" resource="default" engine="innodb" comment="Websites">
+        <column xsi:type="varchar" name="code" nullable="true" length="32" comment="Code"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="64" comment="Website Name"/>
+        <column xsi:type="smallint" name="sort_order" unsigned="true" nullable="false" identity="false"
+                default="0" comment="Sort Order"/>
+        <column xsi:type="smallint" name="default_group_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Default Group ID"/>
+        <column xsi:type="smallint" name="is_default" unsigned="true" nullable="true" identity="false"
+                default="0" comment="Defines Is Website Default"/>
+    </table>
+</schema>
